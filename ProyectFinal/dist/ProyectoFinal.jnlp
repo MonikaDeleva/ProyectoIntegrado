@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8"?>
+<jnlp spec="1.0" xmlns:jfx="http://javafx.com" href="ProyectoFinal.jnlp">
+  <information>
+    <title>ProyectoFinal</title>
+    <vendor>1erDAM</vendor>
+    <description>null</description>
+    <offline-allowed/>
+  </information>
+  <resources>
+    <j2se version="1.6+" href="http://java.sun.com/products/autodl/j2se"/>
+    <jar href="ProyectoFinal.jar" size="2747" download="eager" />
+    <jar href="lib\ant-javafx.jar" size="1495348" download="eager" />
+    <jar href="lib\dt.jar" size="163047" download="eager" />
+    <jar href="lib\javafx-mx.jar" size="36044" download="eager" />
+    <jar href="lib\jconsole.jar" size="407729" download="eager" />
+    <jar href="lib\mysql-connector-java-8.0.28.jar" size="2476480" download="eager" />
+    <jar href="lib\packager.jar" size="4646" download="eager" />
+    <jar href="lib\sa-jdi.jar" size="2415574" download="eager" />
+    <jar href="lib\tools.jar" size="18265082" download="eager" />
+  </resources>
+  <jfx:javafx-desc  width="800" height="600" main-class="Controller.Main"  name="ProyectoFinal" />
+  <update check="always"/>
+</jnlp>
