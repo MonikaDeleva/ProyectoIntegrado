@@ -8,7 +8,7 @@
   </information>
   <resources>
     <j2se version="1.6+" href="http://java.sun.com/products/autodl/j2se"/>
-    <jar href="ProyectoFinal.jar" size="2747" download="eager" />
+    <jar href="ProyectoFinal.jar" size="3179" download="eager" />
     <jar href="lib\ant-javafx.jar" size="1495348" download="eager" />
     <jar href="lib\dt.jar" size="163047" download="eager" />
     <jar href="lib\javafx-mx.jar" size="36044" download="eager" />
