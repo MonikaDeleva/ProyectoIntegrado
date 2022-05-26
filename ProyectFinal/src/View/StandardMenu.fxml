@@ -1,43 +1,14 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
-<?import javafx.scene.control.Button?>
-<?import javafx.scene.control.Label?>
-<?import javafx.scene.control.Menu?>
-<?import javafx.scene.control.MenuBar?>
-<?import javafx.scene.control.MenuItem?>
-<?import javafx.scene.layout.AnchorPane?>
-<?import javafx.scene.layout.Pane?>
+<?import java.lang.*?>
+<?import java.util.*?>
+<?import javafx.scene.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
 
-<AnchorPane id="AnchorPane" prefHeight="720.0" prefWidth="1280.0" xmlns="http://javafx.com/javafx/18" xmlns:fx="http://javafx.com/fxml/1" fx:controller="Controller.FXMLDocumentController">
-   <children>
-      <Pane layoutX="425.0" layoutY="42.0" prefHeight="638.0" prefWidth="806.0">
-         <children>
-            <Pane layoutX="53.0" layoutY="23.0" prefHeight="148.0" prefWidth="720.0">
-               <children>
-                  <Button layoutX="654.0" layoutY="113.0" mnemonicParsing="false" text="Button" />
-                  <Label layoutX="35.0" layoutY="14.0" text="tituloAnuncio" />
-                  <Label layoutX="35.0" layoutY="39.0" prefHeight="70.0" prefWidth="585.0" text="descAnuncio" />
-                  <Label layoutX="231.0" layoutY="117.0" text="numPersonas" />
-                  <Label layoutX="35.0" layoutY="117.0" text="tiempoEstimado" />
-                  <Label layoutX="454.0" layoutY="14.0" text="ubicacion" />
-                  <Label layoutX="242.0" layoutY="14.0" text="categoria" />
-                  <Label layoutX="620.0" layoutY="14.0" text="nombreUsuario" />
-               </children>
-            </Pane>
-         </children>
-      </Pane>
-      <MenuBar layoutX="1.0" layoutY="1.0" prefHeight="26.0" prefWidth="1280.0">
-        <menus>
-          <Menu mnemonicParsing="false" text="INICIO" />
-          <Menu mnemonicParsing="false" text="MIS ANUNCIOS" />
-          <Menu mnemonicParsing="false" text="ANUNCIOS INSCRITOS" />
-            <Menu mnemonicParsing="false" text="CONFIGURACION">
-               <items>
-                  <MenuItem mnemonicParsing="false" text="PREFERENCIAS" />
-                  <MenuItem mnemonicParsing="false" text="PRIVACIDAD Y SEGURIDAD" />
-               </items>
-            </Menu>
-        </menus>
-      </MenuBar>
-   </children>
+<AnchorPane id="AnchorPane" prefHeight="200" prefWidth="320" xmlns:fx="http://javafx.com/fxml/1" fx:controller="Controller.FXMLDocumentController">
+    <children>
+        <Button layoutX="126" layoutY="90" text="Click Me!" onAction="#handleButtonAction" fx:id="button" />
+        <Label layoutX="126" layoutY="120" minHeight="16" minWidth="69" fx:id="label" />
+    </children>
 </AnchorPane>
