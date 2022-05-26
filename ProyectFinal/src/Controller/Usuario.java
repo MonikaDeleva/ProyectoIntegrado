@@ -99,6 +99,10 @@ public class Usuario {
     public int getDivision() {
         return division;
     }
+    
+    public Usuario(){
+    
+    }
 
     public Usuario(int id, String email, String nombre, String apellidos, String contrasena, String ubicacion, String fecha_nacimiento, int puntos, int admin, int division) {
         this.id = id;
