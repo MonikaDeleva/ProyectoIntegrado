@@ -4,7 +4,6 @@
  */
 package Model;
 
-import Controller.Estado;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 

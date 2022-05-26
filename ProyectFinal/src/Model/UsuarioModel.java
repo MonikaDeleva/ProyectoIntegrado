@@ -4,7 +4,6 @@
  */
 package Model;
 
-import Controller.Usuario;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 

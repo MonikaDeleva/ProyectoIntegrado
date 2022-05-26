@@ -4,10 +4,6 @@
  */
 package Model;
 
-import Controller.Anuncio;
-import Controller.Categoria;
-import Controller.Estado;
-import Controller.Usuario;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
