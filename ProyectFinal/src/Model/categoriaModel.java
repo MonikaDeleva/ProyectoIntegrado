@@ -13,9 +13,11 @@ import java.util.ArrayList;
  *
  * @author 1erDAM
  */
-public class CategoriaModel extends DBUtil{
+
+public class categoriaModel extends DBUtil{
     
-    public Categoria getUsuario(int idCategoria) {
+    public Categoria getCategoria(int idCategoria) {
+
 
         try {
             //Iniciamos conexión

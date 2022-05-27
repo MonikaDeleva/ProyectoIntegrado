@@ -4,7 +4,6 @@
  */
 package Controller;
 
-import Model.UsuarioModel;
 import java.net.URL;
 import java.util.ResourceBundle;
 import javafx.event.ActionEvent;
@@ -18,56 +17,21 @@ import javafx.scene.control.Label;
  * @author 1erDAM
  */
 public class FXMLDocumentController implements Initializable {
-
+    
     @FXML
-    private Label tituloAnuncio2;
+    private Label label;
     @FXML
-    private Label descripcionAnuncio2;
+    private Button button;
+    
     @FXML
-    private Label categoriaAnuncio2;
-    @FXML
-    private Label tiempoAnuncio2;
-    @FXML
-    private Label numParticipantes2;
-    @FXML
-    private Label ubicacionAnuncio2;
-    @FXML
-    private Label tituloAnuncio1;
-    @FXML
-    private Label descripcionAnuncio1;
-    @FXML
-    private Label categoriaAnuncio1;
-    @FXML
-    private Label tiempoAnuncio1;
-    @FXML
-    private Label numParticipantes1;
-    @FXML
-    private Label ubicacionAnuncio1;
-    @FXML
-    private Button inscribirseAnuncio1;
-    @FXML
-    private Label tituloAnuncio3;
-    @FXML
-    private Label descripcionAnuncio3;
-    @FXML
-    private Label categoriaAnuncio3;
-    @FXML
-    private Label tiempoAnuncio3;
-    @FXML
-    private Label numParticipantes3;
-    @FXML
-    private Label ubicacionAnuncio3;
-
     private void handleButtonAction(ActionEvent event) {
         System.out.println("You clicked me!");
-
-        
-
+        label.setText("Hello World!");
     }
-
+    
     @Override
     public void initialize(URL url, ResourceBundle rb) {
-
-    }
-
+        // TODO
+    }    
+    
 }
