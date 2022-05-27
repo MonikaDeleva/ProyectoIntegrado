@@ -54,7 +54,9 @@ public class UsuarioModel extends DBUtil {
 
     }
     
+
     public Usuario getUsuarioId(int idUsuario) {
+
 
         try {
             //Iniciamos conexión
