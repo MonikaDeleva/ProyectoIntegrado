@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.Menu?>
+<?import javafx.scene.control.MenuBar?>
+<?import javafx.scene.control.MenuItem?>
+<?import javafx.scene.control.TextArea?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane id="AnchorPane" prefHeight="720.0" prefWidth="1280.0" xmlns="http://javafx.com/javafx/18" xmlns:fx="http://javafx.com/fxml/1" fx:controller="Controller.AnunciosAsignadosController">
+   <children>
+      <MenuBar layoutY="1.0" prefHeight="26.0" prefWidth="1280.0">
+        <menus>
+          <Menu fx:id="menuInicio" mnemonicParsing="false" onAction="#paraInicio" text="INICIO" />
+          <Menu fx:id="menuAnunciosInscritos" mnemonicParsing="false" onAction="#paraAnunciosInscritos" text="ANUNCIOS INSCRITOS" />
+          <Menu fx:id="menuMisAnuncios" mnemonicParsing="false" onAction="#paraMisAnuncios" text="MIS ANUNCIOS" />
+            <Menu fx:id="menuConfiguracion" mnemonicParsing="false" onAction="#paraConfiguracion" text="CONFIGURACION">
+               <items>
+                  <MenuItem mnemonicParsing="false" text="PREFERENCIAS" />
+                  <MenuItem mnemonicParsing="false" text="PRIVACIDAD Y SEGURIDAD" />
+                  <MenuItem mnemonicParsing="false" text="PERFIL Y CUENTA" />
+               </items>
+            </Menu>
+        </menus>
+      </MenuBar>
+      <TextArea fx:id="textAreaAnuncio1" layoutX="163.0" layoutY="227.0" prefHeight="115.0" prefWidth="753.0" />
+      <TextArea fx:id="textAreaAnuncio2" layoutX="163.0" layoutY="366.0" prefHeight="115.0" prefWidth="753.0" />
+      <Label fx:id="labelAnuncio1" layoutX="181.0" layoutY="242.0" text="Anuncio 1" />
+      <Label fx:id="labelAnuncio2" layoutX="181.0" layoutY="387.0" text="Anuncio 2" />
+      <Label fx:id="labelAnunciosAsignados" layoutX="163.0" layoutY="117.0" prefHeight="43.0" prefWidth="268.0" text="Anuncios asignados">
+         <font>
+            <Font size="24.0" />
+         </font>
+      </Label>
+   </children>
+</AnchorPane>

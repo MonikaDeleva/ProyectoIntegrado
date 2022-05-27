@@ -4,20 +4,24 @@
  */
 package Controller;
 
+import Model.Anuncio;
+import Model.AnuncioModel;
 import Model.UsuarioModel;
 import java.net.URL;
+import java.util.ArrayList;
 import java.util.ResourceBundle;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
 import javafx.scene.control.Button;
 import javafx.scene.control.Label;
+import javafx.scene.layout.Pane;
 
 /**
  *
  * @author 1erDAM
  */
-public class FXMLDocumentController implements Initializable {
+public class StandardMenuController implements Initializable {
 
     @FXML
     private Label tituloAnuncio2;
@@ -57,17 +61,45 @@ public class FXMLDocumentController implements Initializable {
     private Label numParticipantes3;
     @FXML
     private Label ubicacionAnuncio3;
+    @FXML
+    private Button inscribirseAnuncio2;
+    @FXML
+    private Pane anuncio2;
+    @FXML
+    private Pane anuncio3;
+    @FXML
+    private Button inscribirseAnuncio3;
+    @FXML
+    private Button prevPageButton;
+    @FXML
+    private Pane tanuncio1;
+    @FXML
+    private Button nextPageButton1;
 
-    private void handleButtonAction(ActionEvent event) {
-        System.out.println("You clicked me!");
+    @FXML
+    private void prevPageButtonAction(ActionEvent event) {
+        
+        
 
+    }
+    
+    @FXML
+    private void nextPageButtonAction(ActionEvent event) {
+        
         
 
     }
 
     @Override
     public void initialize(URL url, ResourceBundle rb) {
-
+           AnuncioModel am = new AnuncioModel();
+           
+           ArrayList<Anuncio> listaAnuncios = am.getAnuncios();
+           
+           
+           
+           
+           
     }
 
 }
