@@ -22,12 +22,14 @@ public class Anuncio {
     private Categoria categoria;
     private Estado estadoAnuncio;
 
+
     //Constructores
     public Anuncio() {
         
     }
 
     
+
     public Anuncio(int idAnuncio, Usuario usuarioPropietario, int tiempoEstimadoAnuncio, int personasNecesariasAnuncio, String tituloAnuncio, String descripcionAnuncio, String ubicacionAnuncio, Categoria categoria, Estado estadoAnuncio) {
         this.idAnuncio = idAnuncio;
         this.usuarioPropietario = usuarioPropietario;
@@ -38,12 +40,14 @@ public class Anuncio {
         this.ubicacionAnuncio = ubicacionAnuncio;
         this.categoria = categoria;
         this.estadoAnuncio = estadoAnuncio;
+
     }
 
     //Getters
 
     public int getIdAnuncio() {
         return idAnuncio;
+
     }
 
     public Usuario getUsuarioPropietario() {

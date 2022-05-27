@@ -16,13 +16,17 @@ public class Usuario {
     private String apellidos;
     private String contrasena;
     private String ubicacion;
+
     private String fechaNacimiento;
+
     private int puntos;
     private int admin;
     private int division;
 
+
     public static final int NO_ADMIN = 0;
     public static final int SI_ADMIN = 1;
+
 
     public void setEmail(String email) {
         this.email = email;
@@ -44,8 +48,10 @@ public class Usuario {
         this.ubicacion = ubicacion;
     }
 
+
     public void setFechaNacimiento(String fechaNacimiento) {
         this.fechaNacimiento = fechaNacimiento;
+
     }
 
     public void setPuntos(int puntos) {
@@ -84,8 +90,10 @@ public class Usuario {
         return ubicacion;
     }
 
+
     public String getFechaNacimiento() {
         return fechaNacimiento;
+
     }
 
     public int getPuntos() {
@@ -104,14 +112,18 @@ public class Usuario {
     
     }
 
+
     public Usuario(int id, String email, String nombre, String apellidos, String contrasena, String ubicacion, String fechaNacimiento, int puntos, int admin, int division) {
+
         this.id = id;
         this.email = email;
         this.nombre = nombre;
         this.apellidos = apellidos;
         this.contrasena = contrasena;
         this.ubicacion = ubicacion;
+
         this.fechaNacimiento = fechaNacimiento;
+
         this.puntos = puntos;
         this.admin = admin;
         this.division = division;
