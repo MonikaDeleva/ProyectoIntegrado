@@ -19,6 +19,7 @@ public class AnuncioModel extends DBUtil{
 
         ArrayList<Anuncio> listaAnuncios = new ArrayList<Anuncio>();
         UsuarioModel usuarioModel = new UsuarioModel();
+      
         categoriaModel categoriaModel = new categoriaModel();
         EstadoModel estadoModel = new EstadoModel();
 
@@ -42,6 +43,7 @@ public class AnuncioModel extends DBUtil{
                 
                 Usuario u = usuarioModel.getUsuarioId(idUsuario);
                 Categoria c = categoriaModel.getCategoria(categoria);
+
                 Estado e = estadoModel.getEstados(estado);
                 
                 Anuncio anuncio = new Anuncio(idAnuncio, u, tiempoEstimado, personasNecesarias, titulo, descripcion, ubicacion, c, e);
