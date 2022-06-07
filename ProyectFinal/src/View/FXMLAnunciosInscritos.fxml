@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane id="AnchorPane" fx:id="rootPane" prefHeight="445.0" prefWidth="783.0" style="-fx-background-color: #f9e7fe;" xmlns="http://javafx.com/javafx/18" xmlns:fx="http://javafx.com/fxml/1" fx:controller="Controller.FXMLAnunciosInscritosController">
+   <children>
+      <Label layoutX="244.0" layoutY="14.0" text="Anuncios Inscritos">
+         <font>
+            <Font name="Source Sans Pro Light" size="40.0" />
+         </font>
+      </Label>
+      <TableView fx:id="tableView" layoutX="26.0" layoutY="81.0" prefHeight="308.0" prefWidth="731.0">
+         <columns>
+            <TableColumn fx:id="tituloAnunciosTableColumn" prefWidth="150.0" text="Título" />
+            <TableColumn fx:id="descripcionAnunciosTableColumn" prefWidth="310.0" text="Descripción" />
+            <TableColumn fx:id="categoriaAnunciosTableColumn" prefWidth="100.0" text="Categoría" />
+            <TableColumn fx:id="ubicacionAnunciosTableColumn" prefWidth="100.0" text="Ubicación" />
+            <TableColumn fx:id="tiempoEstimadoTableColumn" prefWidth="75.0" text="Min." />
+         </columns>
+      </TableView>
+      <Button fx:id="botonAbandonarAnuncio" layoutX="26.0" layoutY="399.0" mnemonicParsing="false" onAction="#abandonarAnuncio" text="Abandonar Anuncio" />
+   </children>
+</AnchorPane>

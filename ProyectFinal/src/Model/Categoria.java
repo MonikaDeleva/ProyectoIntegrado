@@ -9,42 +9,43 @@ package Model;
  * @author 1erDAM
  */
 public class Categoria {
-    //Constantes
-    //Variables
-    private int id_categoria;
-    private String valor_categoria;
+    
+    public int idCategoria;
+    public String descripcion;
 
-    
-    
-    
-    public Categoria(int id_categoria, String valor_categoria) {
-        this.id_categoria = id_categoria;
-        this.valor_categoria = valor_categoria;
-        
+    public int getIdCategoria() {
+        return idCategoria;
     }
 
-    public Categoria() {
+    public void setIdCategoria(int idCategoria) {
+        this.idCategoria = idCategoria;
     }
 
-    public void setId_categoria(int id_categoria) {
-        this.id_categoria = id_categoria;
+    public String getDescripcion() {
+        return descripcion;
     }
 
-    public void setValor_categoria(String valor_categoria) {
-        this.valor_categoria = valor_categoria;
+    public void setDescripcion(String descripcion) {
+        this.descripcion = descripcion;
     }
     
-    
-
-    public int getId_categoria() {
-        return id_categoria;
+    public Categoria(int idCategoria, String descripcion) {
+        this.idCategoria = idCategoria;
+        this.descripcion = descripcion;
     }
-
-    public String getValor_categoria() {
-        return valor_categoria;
-    }
-
     
-
-   
+    //---------------------------------------------------
+    //Singleton
+    
+    private static Categoria categoria;
+    
+    private Categoria(){}
+    
+    public synchronized static Categoria getCategoria(){
+        if (categoria == null) {
+            categoria = new Categoria();
+        }
+        return categoria;
+    }
+    
 }

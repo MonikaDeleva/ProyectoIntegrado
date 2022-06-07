@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.ChoiceBox?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane id="AnchorPane" fx:id="rootPane" prefHeight="445.0" prefWidth="783.0" style="-fx-background-color: #f9e7fe;" xmlns="http://javafx.com/javafx/18" xmlns:fx="http://javafx.com/fxml/1" fx:controller="Controller.FXMLConfiguracionPerfilYCuentaController">
+   <children>
+      <Label layoutX="260.0" layoutY="14.0" text="Perfil Y Cuenta">
+         <font>
+            <Font name="Source Sans Pro Light" size="40.0" />
+         </font>
+      </Label>
+      <AnchorPane layoutX="101.0" layoutY="112.0" prefHeight="222.0" prefWidth="241.0" style="-fx-background-color: #2D2D34; -fx-background-radius: 30;">
+         <children>
+            <TextField fx:id="nombreMiPerfil" layoutX="47.0" layoutY="32.0" promptText="Nombre" style="-fx-background-radius: 30;" />
+            <TextField fx:id="apellidosMiPerfil" layoutX="46.0" layoutY="71.0" promptText="Apellidos" style="-fx-background-radius: 30;" />
+            <ChoiceBox fx:id="ubicacionMiPerfil" layoutX="47.0" layoutY="132.0" prefWidth="150.0" style="-fx-background-radius: 30; -fx-background-color: WHITE;" />
+            <Button fx:id="botonGuardarCambios" layoutX="88.0" layoutY="169.0" mnemonicParsing="false" onAction="#guardarCambios" style="-fx-background-radius: 30; -fx-background-color: WHITE;" text="GUARDAR CAMBIOS" />
+            <Label layoutX="47.0" layoutY="111.0" text="Ubicación:" textFill="WHITE" />
+         </children>
+      </AnchorPane>
+      <AnchorPane layoutX="442.0" layoutY="112.0" prefHeight="222.0" prefWidth="241.0" style="-fx-background-color: #2D2D34; -fx-background-radius: 30;">
+         <children>
+            <Button fx:id="botonCerrarSesion" layoutX="35.0" layoutY="42.0" mnemonicParsing="false" onAction="#cerrarSesion" prefHeight="49.0" prefWidth="171.0" style="-fx-background-radius: 30; -fx-background-color: WHITE;" text="CERRAR SESIÓN" />
+            <Button fx:id="botonEliminarCuenta" layoutX="35.0" layoutY="119.0" mnemonicParsing="false" onAction="#eliminarCuenta" prefHeight="49.0" prefWidth="171.0" style="-fx-background-radius: 30; -fx-background-color: WHITE;" text="ELIMINAR CUENTA" />
+         </children>
+      </AnchorPane>
+   </children>
+</AnchorPane>

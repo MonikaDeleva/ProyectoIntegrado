@@ -10,15 +10,15 @@ import java.sql.SQLException;
 
 /**
  *
- * @author 1erDAM
+ * @author Administrador
  */
 public class DBUtil {
-    
+
     Connection conn;
     private String cadenaConexion = "jdbc:mysql://localhost:3306/proyectofinal";
     private String nombreUsuario = "root";
     private String password = "";
-    
+
     public Connection getConnection() {
 
         try {
@@ -31,7 +31,7 @@ public class DBUtil {
         }
 
     }
-    
+
     public void closeConnection() {
         try {
             this.conn.close();
@@ -39,5 +39,5 @@ public class DBUtil {
             e.printStackTrace();
         }
     }
-    
+
 }

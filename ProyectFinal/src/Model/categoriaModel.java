@@ -6,38 +6,36 @@ package Model;
 
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
-import java.sql.SQLException;
 import java.util.ArrayList;
 
 /**
  *
  * @author 1erDAM
  */
+public class CategoriaModel extends DBUtil {
 
-public class categoriaModel extends DBUtil{
+    public ArrayList<Categoria> getCategorias() {
     
-    public Categoria getCategoria(int idCategoria) {
-
-
+        ArrayList<Categoria> listaCategorias = new ArrayList<Categoria>();
+        
         try {
-            //Iniciamos conexión
+            
             String sql = "SELECT id_categoria, valor FROM categoria";
             PreparedStatement stmt = this.getConnection().prepareStatement(sql);
             ResultSet rs = stmt.executeQuery();
+            
+            while (rs.next()) {
 
-            Categoria categoria = null;
-            while(rs.next()){
+                int id = rs.getInt("id_categoria");
+                String descripcion = rs.getString("valor");
                 
-                int id = rs.getInt("id");
-                String valor = rs.getString("valor");
-                
-                if (id == idCategoria) {
-                    categoria = new Categoria(id, valor);
-                }
+                Categoria categoria = new Categoria(id, descripcion);
+                listaCategorias.add(categoria);
+
             }
             
-            return categoria;
-
+            return listaCategorias;
+            
         } catch (Exception e) {
             
             e.printStackTrace();
@@ -46,6 +44,7 @@ public class categoriaModel extends DBUtil{
         } finally {
             this.closeConnection();
         }
-        
+
     }
+
 }
