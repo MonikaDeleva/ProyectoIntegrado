@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Menu?>
+<?import javafx.scene.control.MenuBar?>
+<?import javafx.scene.control.MenuItem?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.VBox?>
+
+<VBox maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="469.0" prefWidth="794.0" xmlns="http://javafx.com/javafx/18" xmlns:fx="http://javafx.com/fxml/1" fx:controller="Controller.FXMLMenuNavegacionController">
+   <children>
+      <MenuBar style="-fx-background-color: #f9e7fe;">
+        <menus>
+          <Menu mnemonicParsing="false" text="INICIO">
+               <items>
+                  <MenuItem fx:id="botonInicio" mnemonicParsing="false" onAction="#inicioAplicacion" text="Inicio" />
+               </items></Menu>
+          <Menu mnemonicParsing="false" text="ANUNCIOS">
+               <items>
+                  <MenuItem fx:id="botonMisAnuncios" mnemonicParsing="false" onAction="#misAnuncios" text="Mis anuncios" />
+                  <MenuItem fx:id="botonAnunciosInscritos" mnemonicParsing="false" onAction="#anunciosInscritos" text="Anuncios Inscritos" />
+                <MenuItem fx:id="botonPublicarAnuncio" mnemonicParsing="false" onAction="#publicarAnuncio" text="Publicar Anuncio" />
+               </items></Menu>
+            <Menu mnemonicParsing="false" text="CONFIGURACIÓN">
+              <items>
+                  <MenuItem fx:id="botonConfiguracionPrivacidadYSeguridad" mnemonicParsing="false" onAction="#configuracionPrivacidadYSeguridad" text="PRIVACIDAD Y SEGURIDAD" />
+                  <MenuItem fx:id="botonConfiguracionPerfilYCuenta" mnemonicParsing="false" onAction="#configuracionPerfilYCuenta" text="PERFIL Y CUENTA" />
+              </items>
+            </Menu>
+        </menus>
+      </MenuBar>
+      <AnchorPane fx:id="rootPane" prefHeight="445.0" prefWidth="783.0" />
+   </children>
+</VBox>

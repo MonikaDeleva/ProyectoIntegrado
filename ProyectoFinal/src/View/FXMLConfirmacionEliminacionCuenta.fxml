@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.PasswordField?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane id="AnchorPane" fx:id="rootPane" prefHeight="445.0" prefWidth="783.0" style="-fx-background-color: #f9e7fe;" xmlns="http://javafx.com/javafx/18" xmlns:fx="http://javafx.com/fxml/1" fx:controller="Controller.FXMLConfirmacionEliminacionCuentaController">
+   <children>
+      <Label layoutX="256.0" layoutY="14.0" text="Eliminar cuenta" textFill="#2d2d34">
+         <font>
+            <Font name="Source Sans Pro Light" size="40.0" />
+         </font>
+      </Label>
+      <Button fx:id="botonVolverAtras" layoutX="40.0" layoutY="36.0" mnemonicParsing="false" onAction="#volverAtras" style="-fx-background-color: #2D2D34; -fx-background-radius: 50;" text="&lt;--" textFill="WHITE" />
+      <AnchorPane layoutX="128.0" layoutY="98.0" prefHeight="272.0" prefWidth="541.0" style="-fx-background-color: #2D2D34; -fx-background-radius: 20;">
+         <children>
+            <Label layoutX="57.0" layoutY="26.0" text="Introduce el email:" textFill="WHITE" />
+            <Label layoutX="57.0" layoutY="78.0" text="Introduce la contraseña:" textFill="WHITE" />
+            <Label layoutX="57.0" layoutY="125.0" text="Vuelve a introducir la contraseña:" textFill="WHITE" />
+            <TextField fx:id="emailConfirmacion" layoutX="57.0" layoutY="43.0" prefHeight="25.0" prefWidth="176.0" />
+            <Button fx:id="botonEliminarCuenta" layoutX="310.0" layoutY="183.0" mnemonicParsing="false" onAction="#eliminarCuenta" prefHeight="53.0" prefWidth="160.0" style="-fx-background-radius: 20; -fx-background-color: white;" text="ELIMINAR CUENTA" textFill="#2d2d34" />
+            <PasswordField fx:id="contrasenyaConfirmacion" layoutX="57.0" layoutY="95.0" prefHeight="25.0" prefWidth="176.0" />
+            <PasswordField fx:id="contrasenyaConfirmacion2" layoutX="57.0" layoutY="142.0" prefHeight="25.0" prefWidth="176.0" />
+         </children>
+      </AnchorPane>
+   </children>
+</AnchorPane>
