@@ -23,6 +23,8 @@ import javafx.scene.layout.AnchorPane;
 
 /**
  * FXML Controller class
+ * 
+ * <p>En la página principal se mostrará en una tabla todos los anuncios libre, y se podrán inscribir en ellos.</p>
  *
  * @author 1erDAM
  */
@@ -66,6 +68,10 @@ public class FXMLPaginaPrincipalController implements Initializable {
 
     }
 
+    /**
+     * <p>Se selecciona de la tabla un objeto anuncio y se llamará al metodo inscribirAnuncio, situdao en AnuncioModel</p>
+     * @param event 
+     */
     @FXML
     private void inscribirmeAnuncio(ActionEvent event) {
 

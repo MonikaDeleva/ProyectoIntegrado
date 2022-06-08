@@ -20,6 +20,16 @@ import javafx.scene.layout.AnchorPane;
 
 /**
  * FXML Controller class
+ * <p>Es un menú de navegación en el que dispondremos de las siguietes opciones:</p>
+ * <ul>
+ * <li>Inicio, donde se mostrarán todos los anuncios libres</li>
+ * <li>Mis Anuncios, donde se mostrarán todos mis anuncios que estén libres o pendientes</li>
+ * <li>Anuncios inscritos, donde se mostrarán todos los anuncios en los que estemos inscritos</li>
+ * <li>Publicar anuncio, donde podremos publicar un anuncio.</li>
+ * <li>Configuración y privacidad, donde podrmoe cambiar nuestro email y nuestra contraseña.</li>
+ * <li>Perfil y cuenta, donde podremos ver nuestra información personal y modificarla, admeás de cerrar sesión y eliminar cuenta.</li>
+ * 
+ * </ul>
  *
  * @author 1erDAM
  */
@@ -42,6 +52,7 @@ public class FXMLMenuNavegacionController implements Initializable {
     
     /**
      * Initializes the controller class.
+     * <p>Al inicializarse esta escena se carga en el enchorPane, llamado rootPane, la pagina principal.</p>
      */
     @Override
     public void initialize(URL url, ResourceBundle rb) {
@@ -55,6 +66,10 @@ public class FXMLMenuNavegacionController implements Initializable {
         
     }    
 
+    /**
+     * <p>Nos redirecciona a la escena de la pagina principal, donde estan todos los anuncios libres.</p>
+     * @param event 
+     */
     @FXML
     private void inicioAplicacion(ActionEvent event) {
         
@@ -67,6 +82,10 @@ public class FXMLMenuNavegacionController implements Initializable {
         
     }
 
+    /**
+     * <p>Nos redirecciona a la escena de anuncios insccritos, donde de muestran todos los anuncios en los que estoy inscrito.</p>
+     * @param event 
+     */
     @FXML
     private void anunciosInscritos(ActionEvent event) {
         
@@ -78,6 +97,10 @@ public class FXMLMenuNavegacionController implements Initializable {
         }
     }
 
+    /**
+     * <p>Nos redirecciona a la escena de mis anuncios, dende se muestran todos los anuncios que he publicado.</p>
+     * @param event 
+     */
     @FXML
     private void misAnuncios(ActionEvent event) {
         
@@ -90,6 +113,10 @@ public class FXMLMenuNavegacionController implements Initializable {
         
     }
 
+    /**
+     * <p>Nos redirecciona a la escena de Privacidad Y seguridad, donde estan las opciones de cambiar email y contraseña.</p>
+     * @param event 
+     */
     @FXML
     private void configuracionPrivacidadYSeguridad(ActionEvent event) {
         
@@ -102,6 +129,10 @@ public class FXMLMenuNavegacionController implements Initializable {
         
     }
 
+    /**
+     * <p>Nos redirecciona a Perfil Y cuenta, donde podremos ver nuestros datos personales, cerrar sesión y eliminar cuenta.</p>
+     * @param event 
+     */
     @FXML
     private void configuracionPerfilYCuenta(ActionEvent event) {
         
@@ -113,7 +144,11 @@ public class FXMLMenuNavegacionController implements Initializable {
         }
         
     }
-
+    
+    /**
+     * <p>Nos redireccionará a la escena de publicar anuncio, donde podremos publicar un anuncio.</p>
+     * @param event 
+     */
     @FXML
     private void publicarAnuncio(ActionEvent event) {
         

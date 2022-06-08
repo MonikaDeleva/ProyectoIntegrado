@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane id="AnchorPane" fx:id="rootPane" prefHeight="445.0" prefWidth="783.0" style="-fx-background-color: #f9e7fe;" xmlns="http://javafx.com/javafx/18" xmlns:fx="http://javafx.com/fxml/1" fx:controller="Controller.FXMListaUsuariosAdministradorController">
+   <children>
+      <Label layoutX="279.0" layoutY="14.0" text="Lista Usuarios" textFill="#2d2d34">
+         <font>
+            <Font name="Source Sans Pro Light" size="40.0" />
+         </font>
+      </Label>
+      <TableView fx:id="tableViewListaUsuarios" layoutX="14.0" layoutY="67.0" prefHeight="317.0" prefWidth="753.0">
+        <columns>
+          <TableColumn fx:id="tableColumnIDUsuarios" prefWidth="40.0" text="ID" />
+          <TableColumn fx:id="tableColumnEmailUsuarios" prefWidth="172.0" text="E-mail" />
+            <TableColumn fx:id="tableColumnNombreUsuario" prefWidth="110.0" text="Nombre" />
+            <TableColumn fx:id="tableColumnApellidosUsuario" prefWidth="180.0" text="Apellidos" />
+            <TableColumn fx:id="tableColumnUbicacionUsuario" prefWidth="120.0" text="Ubicación" />
+            <TableColumn fx:id="tableColumnFechaNacimiento" prefWidth="130.0" text="Fecha Nacimiento" />
+        </columns>
+      </TableView>
+      <Button fx:id="botonEliminarUsuario" layoutX="14.0" layoutY="391.0" mnemonicParsing="false" onAction="#eliminarUsuario" prefHeight="33.0" prefWidth="152.0" style="-fx-background-color: #2D2D34; -fx-background-radius: 20;" text="ELIMINAR USUARIO" textFill="WHITE" />
+      <Button fx:id="botonVolverAtras" layoutX="20.0" layoutY="16.0" mnemonicParsing="false" onAction="#volverAtras" style="-fx-background-color: #2D2D34; -fx-background-radius: 50;" text="&lt;--" textFill="WHITE" />
+   </children>
+</AnchorPane>

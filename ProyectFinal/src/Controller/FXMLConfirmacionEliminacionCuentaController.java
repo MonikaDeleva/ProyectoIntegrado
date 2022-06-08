@@ -22,10 +22,20 @@ import javafx.scene.control.Button;
 import javafx.scene.control.ButtonType;
 import javafx.scene.control.PasswordField;
 import javafx.scene.control.TextField;
+import javafx.scene.layout.AnchorPane;
 import javafx.stage.Stage;
 
 /**
  * FXML Controller class
+ * 
+ * <p>En esta clase se eliminará nuestra cuenta de usuario. Tendremos que introducir tres campos:</p>
+ * <ul>
+ * <li>Email</li>
+ * <li>Contraseña</li>
+ * <li>Confirmar Contraseña</li>
+ * </ul>
+ * 
+ * <p>Esto de hace para una mayor seguridad.</p>
  *
  * @author 1erDAM
  */
@@ -39,6 +49,10 @@ public class FXMLConfirmacionEliminacionCuentaController implements Initializabl
     private PasswordField contrasenyaConfirmacion2;
     @FXML
     private Button botonEliminarCuenta;
+    @FXML
+    private Button botonVolverAtras;
+    @FXML
+    private AnchorPane rootPane;
 
     /**
      * Initializes the controller class.
@@ -48,6 +62,11 @@ public class FXMLConfirmacionEliminacionCuentaController implements Initializabl
         // TODO
     }
 
+    /**
+     * <p>En este metodo podremos eliminar nuesta cuenta de usuario, comprobando que el email y las contraseñas
+     * coinciden y de que existen.</p>
+     * @param event 
+     */
     @FXML
     private void eliminarCuenta(ActionEvent event) {
 
@@ -127,6 +146,22 @@ public class FXMLConfirmacionEliminacionCuentaController implements Initializabl
 
         }
 
+    }
+
+    /**
+     * <p>Este metodo es solo un boton que nos devuelve a la escena de Perfil Y Cuenta</p>
+     * @param event 
+     */
+    @FXML
+    private void volverAtras(ActionEvent event) {
+        
+        try {
+            AnchorPane pane = FXMLLoader.load(getClass().getResource("/View/FXMLConfiguracionPerfilYCuenta.fxml"));
+            this.rootPane.getChildren().setAll(pane);
+        } catch (IOException ex) {
+            Logger.getLogger(FXMLConfiguracionPerfilYCuentaController.class.getName()).log(Level.SEVERE, null, ex);
+        }
+        
     }
 
 }

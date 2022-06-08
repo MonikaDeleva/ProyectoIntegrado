@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane id="AnchorPane" fx:id="rootPane" prefHeight="445.0" prefWidth="783.0" style="-fx-background-color: #f9e7fe;" xmlns="http://javafx.com/javafx/18" xmlns:fx="http://javafx.com/fxml/1" fx:controller="Controller.FXMLPanelControlAdministradorController">
+   <children>
+      <Label layoutX="208.0" layoutY="14.0" text="PANEL DE CONTROL" textFill="#2d2d34">
+         <font>
+            <Font name="Source Sans Pro Light" size="40.0" />
+         </font>
+      </Label>
+      <AnchorPane layoutX="35.0" layoutY="86.0" prefHeight="319.0" prefWidth="713.0" style="-fx-background-radius: 20; -fx-background-color: #2D2D34;">
+         <children>
+            <Button fx:id="botonListaUsuarios" layoutX="57.0" layoutY="124.0" mnemonicParsing="false" onAction="#listaUsuarios" prefHeight="53.0" prefWidth="149.0" style="-fx-background-color: white; -fx-background-radius: 20;" text="LISTA USUARIOS" textFill="#2d2d34" />
+            <Button fx:id="botonListaAnuncios" layoutX="282.0" layoutY="124.0" mnemonicParsing="false" onAction="#listaAnuncios" prefHeight="53.0" prefWidth="149.0" style="-fx-background-color: white; -fx-background-radius: 20;" text="LISTA ANUNCIOS" textFill="#2d2d34" />
+            <Button fx:id="botonListaCategorias" layoutX="505.0" layoutY="124.0" mnemonicParsing="false" onAction="#listaCategorias" prefHeight="53.0" prefWidth="149.0" style="-fx-background-color: white; -fx-background-radius: 20;" text="LISTA CATEGORIAS" textFill="#2d2d34" />
+         </children>
+      </AnchorPane>
+   </children>
+</AnchorPane>

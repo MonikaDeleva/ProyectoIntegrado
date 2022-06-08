@@ -17,21 +17,11 @@ public class Usuario {
     public String contrasenya;
     public String ubicacion;
     public String fechaNacimento;
-    public int puntos;
     public int admin;
-    public int division;
     
     public static int ADMIN_NO = 0;
     public static int ADMIN_SI = 1;
-    
-    public static int DIVISION_BRONZE = 1;
-    public static int DIVISION_PLATA = 2;
-    public static int DIVISION_ORO = 3;
-    public static int DIVISION_PLATINO = 4;
-    public static int DIVISION_DIAMANTE = 5;
-    
-    
-  
+
     public int getId() {
         return id;
     }
@@ -88,14 +78,6 @@ public class Usuario {
         this.fechaNacimento = fechaNacimento;
     }
 
-    public int getPuntos() {
-        return puntos;
-    }
-
-    public void setPuntos(int puntos) {
-        this.puntos = puntos;
-    }
-
     public int getAdmin() {
         return admin;
     }
@@ -104,15 +86,7 @@ public class Usuario {
         this.admin = admin;
     }
 
-    public int getDivision() {
-        return division;
-    }
-
-    public void setDivision(int division) {
-        this.division = division;
-    }
-
-    public Usuario(int id, String email, String nombre, String apellidos, String contrasenya, String ubicacion, String fechaNacimento, int puntos, int admin, int division) {
+    public Usuario(int id, String email, String nombre, String apellidos, String contrasenya, String ubicacion, String fechaNacimento, int admin) {
         this.id = id;
         this.email = email;
         this.nombre = nombre;
@@ -120,11 +94,9 @@ public class Usuario {
         this.contrasenya = contrasenya;
         this.ubicacion = ubicacion;
         this.fechaNacimento = fechaNacimento;
-        this.puntos = puntos;
         this.admin = admin;
-        this.division = division;
     }
-    
+
     //---------------------------------------------------
     //Singleton
     

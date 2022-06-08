@@ -29,6 +29,7 @@ import javafx.scene.layout.AnchorPane;
 
 /**
  * FXML Controller class
+ * <p>Podremos publicar un anuncio rellenando todos los campos que aparecen en la escena y dandole al boton publicar.</p>
  *
  * @author 1erDAM
  */
@@ -82,6 +83,10 @@ public class FXMLPublicarAnuncioController implements Initializable {
 
     }
 
+    /**
+     * <p>Recoge todos los campos introducidos por pantalla y crea un objeto anuncio, luego llama al metodo insertarAnuncio situado en la clase AnuncioModel</p>
+     * @param event 
+     */
     @FXML
     private void publicarAnuncio(ActionEvent event) {
 

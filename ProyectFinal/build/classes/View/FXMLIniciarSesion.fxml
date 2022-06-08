@@ -11,24 +11,24 @@
 
 <AnchorPane id="AnchorPane" fx:id="rootPane" prefHeight="445.0" prefWidth="783.0" style="-fx-background-color: white;" xmlns="http://javafx.com/javafx/18" xmlns:fx="http://javafx.com/fxml/1" fx:controller="Controller.FXMLIniciarSesionController">
    <children>
-      <ImageView fitHeight="501.0" fitWidth="756.0" layoutX="16.0" layoutY="-1.0" opacity="0.82" pickOnBounds="true" preserveRatio="true">
+      <ImageView fitHeight="534.0" fitWidth="817.0" layoutX="-6.0" opacity="0.82" pickOnBounds="true" preserveRatio="true">
          <image>
             <Image url="@../images/iniciarsesion%20(2).jpg" />
          </image>
       </ImageView>
-      <AnchorPane layoutX="289.0" layoutY="14.0" prefHeight="469.0" prefWidth="233.0" style="-fx-background-color: white; -fx-border-color: black; -fx-border-radius: 20; -fx-background-radius: 20;">
+      <AnchorPane layoutX="235.0" layoutY="34.0" prefHeight="467.0" prefWidth="319.0" style="-fx-background-color: white; -fx-border-color: black; -fx-border-radius: 20; -fx-background-radius: 20;">
          <children>
-            <Label layoutX="33.0" layoutY="22.0" prefHeight="58.0" prefWidth="180.0" style="-fx-background-color: white;" text="Iniciar Sesión" textAlignment="CENTER">
+            <TextField fx:id="emaiIntroducidoTextField" layoutX="65.0" layoutY="190.0" prefHeight="31.0" prefWidth="190.0" promptText="email" style="-fx-background-radius: 20;" />
+            <Label layoutX="45.0" layoutY="22.0" prefHeight="58.0" prefWidth="238.0" style="-fx-background-color: white;" text="Iniciar Sesión" textAlignment="CENTER" textFill="#2d2d34">
                <font>
-                  <Font size="30.0" />
+                  <Font name="Source Sans Pro Light" size="40.0" />
                </font>
             </Label>
-            <TextField fx:id="emaiIntroducidoTextField" layoutX="22.0" layoutY="176.0" prefHeight="25.0" prefWidth="190.0" promptText="email" />
-            <PasswordField fx:id="contrasenyaIntroducidaTextField" layoutX="22.0" layoutY="222.0" prefHeight="25.0" prefWidth="190.0" promptText="Contraseña" />
-            <Button fx:id="botonSeleccionarIniciarSesion" layoutX="26.0" layoutY="262.0" mnemonicParsing="false" onAction="#iniciarSesion" text="Iniciar Sesión" />
-            <Button fx:id="botonSeleccionarRegistrarse" layoutX="64.0" layoutY="396.0" mnemonicParsing="false" onAction="#registrarUsuario" prefHeight="25.0" prefWidth="117.0" text="Regístrate" />
-            <Label layoutX="69.0" layoutY="368.0" prefHeight="17.0" prefWidth="107.0" text="¿No tienes cuenta?" />
-            <ImageView fitHeight="87.0" fitWidth="117.0" layoutX="64.0" layoutY="80.0" pickOnBounds="true" preserveRatio="true">
+            <PasswordField fx:id="contrasenyaIntroducidaTextField" layoutX="65.0" layoutY="234.0" prefHeight="31.0" prefWidth="190.0" promptText="Contraseña" style="-fx-background-radius: 20;" />
+            <Button fx:id="botonSeleccionarIniciarSesion" layoutX="64.0" layoutY="276.0" mnemonicParsing="false" onAction="#iniciarSesion" prefHeight="31.0" prefWidth="100.0" style="-fx-background-radius: 20; -fx-background-color: #2D2D34;" text="Iniciar Sesión" textFill="WHITE" />
+            <Button fx:id="botonSeleccionarRegistrarse" layoutX="95.0" layoutY="394.0" mnemonicParsing="false" onAction="#registrarUsuario" prefHeight="31.0" prefWidth="126.0" style="-fx-background-color: #2D2D34; -fx-background-radius: 20;" text="Regístrate" textFill="WHITE" />
+            <Label layoutX="105.0" layoutY="368.0" prefHeight="17.0" prefWidth="107.0" text="¿No tienes cuenta?" />
+            <ImageView fitHeight="101.0" fitWidth="168.0" layoutX="95.0" layoutY="80.0" pickOnBounds="true" preserveRatio="true">
                <image>
                   <Image url="@../images/usero.jpg" />
                </image>

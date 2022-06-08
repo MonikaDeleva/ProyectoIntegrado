@@ -12,6 +12,8 @@ import java.time.format.DateTimeFormatter;
 import java.util.ResourceBundle;
 import java.util.logging.Level;
 import java.util.logging.Logger;
+import java.util.regex.Matcher;
+import java.util.regex.Pattern;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
@@ -29,6 +31,7 @@ import javafx.stage.Stage;
 
 /**
  * FXML Controller class
+ * <p>Si no tenemos cuenta nos registraremos introduciendo todos los campos que se nos pregunta y dandole a registrsre..</p>
  *
  * @author Administrador
  */
@@ -66,64 +69,91 @@ public class FXMLRegistrarseController implements Initializable {
 
     }
 
+    /**
+     * <p>Recogemos por pantalla todos los datos introducidos por el usuario, creamos un objeto usuario y llamamos al metodos insertarUsuario situado en UsuarioModel.</p>
+     * @param event 
+     */
     @FXML
     private void registrarUsuario(ActionEvent event) {
 
         UsuarioModel usuarioModel = new UsuarioModel();
 
-        try {
+        Pattern pattern = Pattern
+                .compile("^[_A-Za-z0-9-\\+]+(\\.[_A-Za-z0-9-]+)*@"
+                        + "[A-Za-z0-9-]+(\\.[A-Za-z0-9]+)*(\\.[A-Za-z]{2,})$");
 
-            String nombre = nombreIntroducidoTextField.getText();
-            String apellidos = apellidosIntroducidosTextField.getText();
-            String email = emailIntroducidoTextField.getText();
-            String contrasenya = contrsenyaIntroducidaTextField.getText();
-            String ubicacion = ubicacionChoiceBox.getSelectionModel().getSelectedItem();
-            String fechaNacimiento = fechaNacimientoDatePicker.getValue().format(DateTimeFormatter.BASIC_ISO_DATE);
+        String comprobarEmail = emailIntroducidoTextField.getText();
 
-            if (!nombre.equals("") && !apellidos.equals("") && !email.equals("") && !contrasenya.equals("") && !ubicacion.equals("") && !fechaNacimiento.equals("")) {
+        Matcher mather = pattern.matcher(comprobarEmail);
 
-                Usuario usuario = new Usuario(0, email, nombre, apellidos, contrasenya, ubicacion, fechaNacimiento, 0, Usuario.ADMIN_NO, Usuario.DIVISION_BRONZE);
+        if (mather.find()) {
 
-                if (usuarioModel.insertarUsuario(usuario)) {
+            try {
 
-                    Alert alert = new Alert(Alert.AlertType.INFORMATION);
-                    alert.setHeaderText("USUARIO GUARDADO CORRECTAMENE");
-                    alert.setContentText("El usuario se ha guardado correctamente");
-                    alert.showAndWait();
-                    
-                    nombreIntroducidoTextField.setText("");
-                    apellidosIntroducidosTextField.setText("");
-                    emailIntroducidoTextField.setText("");
-                    contrsenyaIntroducidaTextField.setText("");
+                String nombre = nombreIntroducidoTextField.getText();
+                String apellidos = apellidosIntroducidosTextField.getText();
+                String email = emailIntroducidoTextField.getText();
+                String contrasenya = contrsenyaIntroducidaTextField.getText();
+                String ubicacion = ubicacionChoiceBox.getSelectionModel().getSelectedItem();
+                String fechaNacimiento = fechaNacimientoDatePicker.getValue().format(DateTimeFormatter.BASIC_ISO_DATE);
+
+                if (!nombre.equals("") && !apellidos.equals("") && !email.equals("") && !contrasenya.equals("") && !ubicacion.equals("") && !fechaNacimiento.equals("")) {
+
+                    Usuario usuario = new Usuario(0, email, nombre, apellidos, contrasenya, ubicacion, fechaNacimiento, Usuario.ADMIN_NO);
+
+                    if (usuarioModel.insertarUsuario(usuario)) {
+
+                        Alert alert = new Alert(Alert.AlertType.INFORMATION);
+                        alert.setHeaderText("USUARIO GUARDADO CORRECTAMENE");
+                        alert.setContentText("El usuario se ha registrado correctamente");
+                        alert.showAndWait();
+
+                        nombreIntroducidoTextField.setText("");
+                        apellidosIntroducidosTextField.setText("");
+                        emailIntroducidoTextField.setText("");
+                        contrsenyaIntroducidaTextField.setText("");
+
+                    } else {
+
+                        Alert alert = new Alert(Alert.AlertType.ERROR);
+                        alert.setHeaderText("ERROR!! EL USUARIO NO SE HA PODIDO REGISTRAR");
+                        alert.setContentText("No se ha pododido registrar el usuario.");
+                        alert.showAndWait();
+
+                    }
 
                 } else {
 
                     Alert alert = new Alert(Alert.AlertType.ERROR);
-                    alert.setHeaderText("ERROR!! EL USUARIO NO SE HA PODIDO GUARDAR");
-                    alert.setContentText("No se ha pododido introducir el usuario.");
+                    alert.setHeaderText("ERROR");
+                    alert.setContentText("Rellene todos los campos");
                     alert.showAndWait();
 
                 }
 
-            } else{
-                
+            } catch (Exception e) {
+
                 Alert alert = new Alert(Alert.AlertType.ERROR);
                 alert.setHeaderText("ERROR");
-                alert.setContentText("Rellene todos los campos");
+                alert.setContentText("Revise los campos introducidos");
                 alert.showAndWait();
-                
             }
 
-        } catch (Exception e) {
+        } else {
 
             Alert alert = new Alert(Alert.AlertType.ERROR);
             alert.setHeaderText("ERROR");
             alert.setContentText("Revise los campos introducidos");
             alert.showAndWait();
+
         }
 
     }
 
+    /**
+     * <p>Es un simple boton que nos devuelve al inicio de sesión</p>
+     * @param event 
+     */
     @FXML
     private void volverInicioSesion(ActionEvent event) {
 

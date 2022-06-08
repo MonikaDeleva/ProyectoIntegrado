@@ -27,6 +27,15 @@ import javafx.stage.Stage;
 
 /**
  * FXML Controller class
+ * 
+ * <p>Esta clase se divide en dos apatado:</p>
+ * <ul>
+ * <li>Perfil</li>
+ * <li>Cuenta</li>
+ * </ul>
+ * 
+ * <p>En el apartado perfil podremos ver nuestra información personal y podremos modificarla.</p>
+ * <p>En el apartado cuenta, tendremos dos opciones, la de cerrar sesión y la de eliminar nuestra cuenta.</p>
  *
  * @author 1erDAM
  */
@@ -64,6 +73,10 @@ public class FXMLConfiguracionPerfilYCuentaController implements Initializable {
         ubicacionMiPerfil.getSelectionModel().select(Usuario.getUsuario().ubicacion);
     }
 
+    /**
+     * <p>En este metodo podremos modificar tanto nuestro nombre de usuario, apellidos y ubicacion.</p>
+     * @param event 
+     */
     @FXML
     private void guardarCambios(ActionEvent event) {
 
@@ -120,6 +133,10 @@ public class FXMLConfiguracionPerfilYCuentaController implements Initializable {
 
     }
 
+    /**
+     * <p>Podremos cerrar sesión y volver a la pagina de iniciar sesión.</p>
+     * @param event 
+     */
     @FXML
     private void cerrarSesion(ActionEvent event) {
 
@@ -153,6 +170,10 @@ public class FXMLConfiguracionPerfilYCuentaController implements Initializable {
 
     }
 
+    /**
+     * <p>Este metodo eliminará nuestra cuenta.</p>
+     * @param event 
+     */
     @FXML
     private void eliminarCuenta(ActionEvent event) {
 

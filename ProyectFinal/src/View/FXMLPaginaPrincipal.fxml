@@ -9,12 +9,12 @@
 
 <AnchorPane id="AnchorPane" fx:id="rootPane" prefHeight="475.0" prefWidth="783.0" style="-fx-background-color: #f9e7fe;" xmlns="http://javafx.com/javafx/18" xmlns:fx="http://javafx.com/fxml/1" fx:controller="Controller.FXMLPaginaPrincipalController">
    <children>
-      <Label layoutX="317.0" layoutY="14.0" text="Anuncios">
+      <Label layoutX="311.0" layoutY="14.0" text="Anuncios" textFill="#2d2d34">
          <font>
             <Font name="Source Sans Pro Light" size="40.0" />
          </font>
       </Label>
-      <TableView fx:id="tableView" layoutX="27.0" layoutY="74.0" prefHeight="318.0" prefWidth="731.0">
+      <TableView fx:id="tableView" layoutX="27.0" layoutY="74.0" prefHeight="307.0" prefWidth="731.0">
         <columns>
           <TableColumn fx:id="tituloAnunciosTableColumn" prefWidth="150.0" text="Título" />
           <TableColumn fx:id="descripcionAnunciosTableColumn" prefWidth="310.0" text="Descripción" />
@@ -23,6 +23,6 @@
             <TableColumn fx:id="tiempoEstimadoTableColumn" prefWidth="75.0" text="Min." />
         </columns>
       </TableView>
-      <Button fx:id="botonInscribirme" layoutX="27.0" layoutY="407.0" mnemonicParsing="false" onAction="#inscribirmeAnuncio" text="Inscribirme" />
+      <Button fx:id="botonInscribirme" layoutX="27.0" layoutY="388.0" mnemonicParsing="false" onAction="#inscribirmeAnuncio" prefHeight="44.0" prefWidth="120.0" style="-fx-background-color: #2d2d34; -fx-background-radius: 20;" text="INSCRIBIRME" textFill="WHITE" />
    </children>
 </AnchorPane>

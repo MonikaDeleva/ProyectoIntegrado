@@ -38,7 +38,12 @@ import javafx.scene.text.Font;
 
 /**
  * FXML Controller class
- *
+ * <p>En esta escena podremos ver los anuncios que he publicado que estén libres o pendientes y tendremos tres opciones:</p>
+ *<ul>
+ * <li>Eliminar Anuncio</li>
+ * <li>Modificar Anuncio</li>
+ * <li>Añadir anuncio</li>
+ * </ul>
  * @author 1erDAM
  */
 public class FXMLMisAnunciosController implements Initializable {
@@ -78,6 +83,10 @@ public class FXMLMisAnunciosController implements Initializable {
 
     }
 
+    /**
+     * <p>Nos redirecciona a la escena de publicar un Anuncio</p>
+     * @param event 
+     */
     @FXML
     private void anyadirAnuncio(ActionEvent event) {
 
@@ -90,6 +99,11 @@ public class FXMLMisAnunciosController implements Initializable {
 
     }
 
+    /**
+     * <p>Recoge el objeto anuncio seleccionado en la tabla y lo elimina llamando al metodo eliminarAnuncio
+     * situado en AnuncioModel</p>
+     * @param event 
+     */
     @FXML
     private void eliminarAnuncio(ActionEvent event) {
 
@@ -113,8 +127,6 @@ public class FXMLMisAnunciosController implements Initializable {
 
                 this.tableColumnTituloAnuncio.setCellValueFactory(new PropertyValueFactory("titulo"));
                 this.tableColumnDescripcionAnuncio.setCellValueFactory(new PropertyValueFactory("descripcion"));
-
-                
 
                 ObservableList<Anuncio> misAnuncios = anuncioModel.getMisAnuncios();
 
@@ -140,6 +152,10 @@ public class FXMLMisAnunciosController implements Initializable {
 
     }
 
+    /**
+     * <p>Recoge los datos del anuncio seleccionado en la tabla y nos redirecciona a la escena de ModificarAnuncio</p>
+     * @param event 
+     */
     @FXML
     private void modificarAnuncio(ActionEvent event) {
 

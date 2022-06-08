@@ -8,6 +8,9 @@ import java.sql.DriverManager;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
+import javafx.beans.Observable;
+import javafx.collections.FXCollections;
+import javafx.collections.ObservableList;
 import javafx.scene.control.Alert;
 
 /**
@@ -16,13 +19,20 @@ import javafx.scene.control.Alert;
  */
 public class UsuarioModel extends DBUtil {
     
+    /**
+     * <p>Comprueba que el usuario existe en la base de datos, si existe devolverá un objeto Usuario 
+     *  relleno de su información, si no devolverá un Usuario null.</p>
+     * @param emailIntroducido
+     * @param contrsenyaIntroducida
+     * @return Usuario
+     */
     public Usuario validarUsuario(String emailIntroducido, String contrsenyaIntroducida){
         
         Usuario usuario = null;
         
         try {
             
-            String sql = "SELECT id, email, nombre, apellidos, contrasena, ubicacion, fecha_nacimiento, puntos, admin, division FROM usuario";
+            String sql = "SELECT id, email, nombre, apellidos, contrasena, ubicacion, fecha_nacimiento, admin FROM usuario";
             PreparedStatement stmt = this.getConnection().prepareStatement(sql);
             ResultSet rs = stmt.executeQuery();
             
@@ -35,12 +45,10 @@ public class UsuarioModel extends DBUtil {
                 String contrasenya = rs.getString("contrasena");
                 String ubicacion = rs.getString("ubicacion");
                 String fechaNacimiento = rs.getString("fecha_nacimiento");
-                int puntos = rs.getInt("puntos");
                 int admin = rs.getInt("admin");
-                int division = rs.getInt("division");
                 
                 if (email.equals(emailIntroducido) && contrasenya.equals(contrsenyaIntroducida)) {
-                    usuario = new Usuario(id, email, nombre, apellidos, contrasenya, ubicacion, fechaNacimiento, puntos, admin, division);
+                    usuario = new Usuario(id, email, nombre, apellidos, contrasenya, ubicacion, fechaNacimiento, admin);
                 }
 
             }
@@ -55,11 +63,16 @@ public class UsuarioModel extends DBUtil {
         
     }
 
+    /**
+     * <p>Recibe como parametro un Usuario y lo inserta en la base de datos, si lo consigue devuelve true y si no false.</p>
+     * @param usuario
+     * @return boolean
+     */
     public boolean insertarUsuario(Usuario usuario) {
 
         try {
 
-            String sqlInsert = "INSERT INTO usuario(email, nombre, apellidos, contrasena, ubicacion, fecha_nacimiento, puntos, admin, division) VALUES(?, ?, ?, ?, ?, ?, ?, ?, ?)";
+            String sqlInsert = "INSERT INTO usuario(email, nombre, apellidos, contrasena, ubicacion, fecha_nacimiento, admin) VALUES(?, ?, ?, ?, ?, ?, ?)";
             PreparedStatement stmt = this.getConnection().prepareStatement(sqlInsert);
 
             stmt.setString(1, usuario.getEmail());
@@ -68,9 +81,7 @@ public class UsuarioModel extends DBUtil {
             stmt.setString(4, usuario.getContrasenya());
             stmt.setString(5, usuario.getUbicacion());
             stmt.setString(6, usuario.getFechaNacimento());
-            stmt.setInt(7, usuario.getPuntos());
-            stmt.setInt(8, Usuario.ADMIN_NO);
-            stmt.setInt(9, Usuario.DIVISION_BRONZE);
+            stmt.setInt(7, Usuario.ADMIN_NO);
 
             stmt.execute();
             stmt.close();
@@ -87,6 +98,15 @@ public class UsuarioModel extends DBUtil {
 
     }
     
+    /**
+     * <p>Recibe como parametro los datos que puede modificar, se realiza el UPDATE, si se modifica correctamente
+     *  devuelve true, si no false.</p>
+     * @param nuevoNombre
+     * @param nuevosApellidos
+     * @param nuevaUbicacion
+     * @param idUsuario
+     * @return 
+     */
     public boolean modificarUsuario(String nuevoNombre, String nuevosApellidos, String nuevaUbicacion, int idUsuario){
     
         try {
@@ -114,6 +134,11 @@ public class UsuarioModel extends DBUtil {
         
     }
     
+    /**
+     * <p>Elimina un usuario de la base de datos, coge el id del Usuario que ha iniciado sesión. 
+     * Si se elimina correctamente devuelve true, si no false.</p>
+     * @return boolean
+     */
     public boolean eliminarUsuario(){
         
         try {
@@ -140,6 +165,12 @@ public class UsuarioModel extends DBUtil {
     
     }
     
+    /**
+     * <p>Recibe como parametro el emailActual y el nuevoEmail, si consigue actializar el email en la base de datos devolverá true, si no false</p>
+     * @param emailActual
+     * @param nuevoEmail
+     * @return 
+     */
     public boolean cambiarEmail(String emailActual, String nuevoEmail){
     
         try {
@@ -165,6 +196,12 @@ public class UsuarioModel extends DBUtil {
         
     }
     
+    /**
+     * <p>Recibe como parametro la contrasenyaActual y la nuevaContrasenya, si consigue actializar la contraseña en la base de datos devolverá true, si no false</p>
+     * @param contrasenyaActual
+     * @param nuevaContrasenya
+     * @return 
+     */
     public boolean cambiarContrasenya(String contrasenyaActual, String nuevaContrasenya){
     
         try {
@@ -188,6 +225,89 @@ public class UsuarioModel extends DBUtil {
             this.closeConnection();
         }
         
+    }
+    
+    /**
+     * <p>Rellena un ObservableList con una lista de todos los usuarios de la base de datos.</p>
+     * @return ObservableList<Usuario>
+     */
+    public ObservableList<Usuario> getListaUsuarios(){
+    
+        ObservableList<Usuario> listaUsuarios = FXCollections.observableArrayList();
+        
+        try {
+            
+            String listaUsuario = "SELECT id, email, nombre, apellidos, contrasena, ubicacion, fecha_nacimiento, admin FROM usuario";
+            PreparedStatement stmt = this.getConnection().prepareStatement(listaUsuario);
+            ResultSet rs = stmt.executeQuery();
+            
+            while (rs.next()) {
+
+                int id = rs.getInt("id");
+                String email = rs.getString("email");
+                String nombre = rs.getString("nombre");
+                String apellidos = rs.getString("apellidos");
+                String contrasenya = rs.getString("contrasena");
+                String ubicacion = rs.getString("ubicacion");
+                String fechaNacimiento = rs.getString("fecha_nacimiento");
+                int admin = rs.getInt("admin");
+                
+                if (admin == Usuario.ADMIN_NO) {
+                    
+                    Usuario usuario = new Usuario(id, email, nombre, apellidos, contrasenya, ubicacion, fechaNacimiento, admin);
+                    listaUsuarios.add(usuario);
+                    
+                }
+
+            }
+            
+            return listaUsuarios;
+            
+            
+        } catch (Exception e) {
+            
+            e.printStackTrace();
+            return null;
+            
+        } finally {
+            
+            this.closeConnection();
+            
+        }
+    
+    }
+    
+    /**
+     * <p>Elimina un usuario de la base de datos, coge el id que le hemos pasado por parametro y ejecuta la Consulta. 
+     * Si se elimina correctamente devuelve true, si no false.</p>
+     * @param id
+     * @return boolean
+     */
+    public boolean eliminarUsuarioAdministrador(int id){
+        
+        try {
+        
+            String eliminarUsuario = "DELETE FROM usuario WHERE id = ? ";
+            PreparedStatement stmt = this.getConnection().prepareStatement(eliminarUsuario);
+            
+            stmt.setInt(1, id);
+            
+            stmt.execute();
+            stmt.close();
+            
+            return true;
+            
+        } catch (Exception e) {
+            
+            return false;
+            
+        } finally {
+            
+            this.closeConnection();
+            
+        }
+    
+    
     }
 
 }

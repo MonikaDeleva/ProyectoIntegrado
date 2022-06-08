@@ -30,6 +30,7 @@ import javafx.scene.layout.AnchorPane;
 
 /**
  * FXML Controller class
+ * <p>En esta clase aparece por defecto los valores del anuncio que queremos modificar y podremos modificar su valor.</p>
  *
  * @author 1erDAM
  */
@@ -100,6 +101,11 @@ public class FXMLModificarAnuncioController implements Initializable {
 
     }
 
+    /**
+     * <p>Recoge los nuevos datos por pantalla y los modifica en la base de datos, llando al metodo modificarAnuncio de la clase AnuncioModel</p>
+     * <p>Además si marcamos un anuncio como completado se eliminará el anuncio de mis Anuncios</p>
+     * @param event 
+     */
     @FXML
     private void modificarAnuncio(ActionEvent event) {
 
@@ -135,7 +141,7 @@ public class FXMLModificarAnuncioController implements Initializable {
 
                 Alert alert = new Alert(Alert.AlertType.CONFIRMATION);
                 alert.setHeaderText("CONFIRMACIÓN");
-                alert.setContentText("Esta seguro de que quiere marcar este anuncio como completado?");
+                alert.setContentText("Si marca este anuncio como completado se eliminará. \nEsta seguro de que quiere marcar este anuncio como completado?");
                 alert.showAndWait();
 
                 if (alert.getResult() == ButtonType.OK) {

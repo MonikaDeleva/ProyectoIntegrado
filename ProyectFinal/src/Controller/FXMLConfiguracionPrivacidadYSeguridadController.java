@@ -18,6 +18,15 @@ import javafx.scene.layout.AnchorPane;
 
 /**
  * FXML Controller class
+ * 
+ * <p>Esta clase solo dispone de dos botones:</p>
+ * <ul>
+ * <li>Cambiar email</li>
+ * <li>Cambiar contraseña</li>
+ * <li></li>
+ * </ul>
+ * 
+ * <p>cada boton nos redireccionara a una nueva escena donde podremos efectuar los cambios.</p>
  *
  * @author 1erDAM
  */
@@ -38,6 +47,10 @@ public class FXMLConfiguracionPrivacidadYSeguridadController implements Initiali
         // TODO
     }    
 
+    /**
+     * <p>Nos redirecciona a la pantalla de cambiar email</p>
+     * @param event 
+     */
     @FXML
     private void cambiarEmail(ActionEvent event) {
         
@@ -50,6 +63,10 @@ public class FXMLConfiguracionPrivacidadYSeguridadController implements Initiali
         
     }
 
+    /**
+     * <p>Nos redirecciona a la pantalla de cambiar Contraseña</p>
+     * @param event 
+     */
     @FXML
     private void cambiarContrasenya(ActionEvent event) {
         

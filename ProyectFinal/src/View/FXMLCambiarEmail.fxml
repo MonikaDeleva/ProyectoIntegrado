@@ -6,14 +6,14 @@
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.text.Font?>
 
-<AnchorPane id="AnchorPane" prefHeight="445.0" prefWidth="783.0" style="-fx-background-color: #f9e7fe;" xmlns="http://javafx.com/javafx/18" xmlns:fx="http://javafx.com/fxml/1" fx:controller="Controller.FXMLCambiarEmailController">
+<AnchorPane id="AnchorPane" fx:id="rootPane" prefHeight="445.0" prefWidth="783.0" style="-fx-background-color: #f9e7fe;" xmlns="http://javafx.com/javafx/18" xmlns:fx="http://javafx.com/fxml/1" fx:controller="Controller.FXMLCambiarEmailController">
    <children>
-      <Label layoutX="277.0" layoutY="14.0" text="Cambiar Email">
+      <Label layoutX="277.0" layoutY="14.0" text="Cambiar Email" textFill="#2d2d34">
          <font>
             <Font name="Source Sans Pro Light" size="40.0" />
          </font>
       </Label>
-      <AnchorPane layoutX="140.0" layoutY="97.0" prefHeight="276.0" prefWidth="503.0" style="-fx-background-color: #2D2D34; -fx-border-radius: 30; -fx-background-radius: 30;">
+      <AnchorPane layoutX="98.0" layoutY="86.0" prefHeight="296.0" prefWidth="597.0" style="-fx-background-color: #2D2D34; -fx-border-radius: 30; -fx-background-radius: 30;">
          <children>
             <Label layoutX="60.0" layoutY="29.0" text="Email actual:" textFill="WHITE" />
             <TextField fx:id="emailActual" layoutX="59.0" layoutY="46.0" />
@@ -21,8 +21,9 @@
             <TextField fx:id="nuevoEmail" layoutX="59.0" layoutY="107.0" />
             <Label layoutX="60.0" layoutY="152.0" text="Confirmar nuevo email:" textFill="WHITE" />
             <TextField fx:id="confirmarNuevoEmail" layoutX="59.0" layoutY="169.0" />
-            <Button fx:id="botonCambiarEmail" layoutX="341.0" layoutY="213.0" mnemonicParsing="false" onAction="#cambiarEmail" prefHeight="32.0" prefWidth="124.0" style="-fx-background-color: WHITE; -fx-background-radius: 15;" text="CAMBIAR EMAIL" textFill="#2d2d34" />
+            <Button fx:id="botonCambiarEmail" layoutX="341.0" layoutY="213.0" mnemonicParsing="false" onAction="#cambiarEmail" prefHeight="42.0" prefWidth="155.0" style="-fx-background-color: WHITE; -fx-background-radius: 20;" text="CAMBIAR EMAIL" textFill="#2d2d34" />
          </children>
       </AnchorPane>
+      <Button fx:id="botonVolverAtras" layoutX="40.0" layoutY="36.0" mnemonicParsing="false" onAction="#volverAtras" style="-fx-background-color: #2D2D34; -fx-background-radius: 50;" text="&lt;--" textFill="WHITE" />
    </children>
 </AnchorPane>

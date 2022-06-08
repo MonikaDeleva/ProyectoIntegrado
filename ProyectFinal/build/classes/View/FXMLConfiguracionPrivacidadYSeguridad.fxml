@@ -7,15 +7,15 @@
 
 <AnchorPane id="AnchorPane" fx:id="rootPane" prefHeight="445.0" prefWidth="783.0" style="-fx-background-color: #f9e7fe;" xmlns="http://javafx.com/javafx/18" xmlns:fx="http://javafx.com/fxml/1" fx:controller="Controller.FXMLConfiguracionPrivacidadYSeguridadController">
    <children>
-      <Label layoutX="227.0" layoutY="26.0" text="Privacidad Y Seguridad">
+      <Label layoutX="210.0" layoutY="14.0" text="Privacidad Y Seguridad" textFill="#2d2d34">
          <font>
             <Font name="Source Sans Pro Light" size="40.0" />
          </font>
       </Label>
-      <AnchorPane layoutX="199.0" layoutY="113.0" prefHeight="256.0" prefWidth="427.0" style="-fx-background-color: #2D2D34; -fx-background-radius: 30; -fx-border-radius: 30;">
+      <AnchorPane layoutX="199.0" layoutY="113.0" prefHeight="256.0" prefWidth="427.0" style="-fx-background-color: #2D2D34; -fx-background-radius: 20; -fx-border-radius: 20;">
          <children>
-            <Button fx:id="botonCambiarEmail" layoutX="139.0" layoutY="57.0" mnemonicParsing="false" onAction="#cambiarEmail" prefHeight="46.0" prefWidth="150.0" style="-fx-background-radius: 15; -fx-background-color: WHITE;" text="CAMBIAR EMAIL" textFill="#2d2d34" />
-            <Button fx:id="botonCambiarContrasenya" layoutX="139.0" layoutY="128.0" mnemonicParsing="false" onAction="#cambiarContrasenya" prefHeight="46.0" prefWidth="150.0" style="-fx-background-radius: 15; -fx-background-color: WHITE;" text="CAMBIAR CONTRASEÑA" textFill="#2d2d34" />
+            <Button fx:id="botonCambiarEmail" layoutX="130.0" layoutY="58.0" mnemonicParsing="false" onAction="#cambiarEmail" prefHeight="46.0" prefWidth="169.0" style="-fx-background-radius: 20; -fx-background-color: WHITE;" text="CAMBIAR EMAIL" textFill="#2d2d34" />
+            <Button fx:id="botonCambiarContrasenya" layoutX="130.0" layoutY="143.0" mnemonicParsing="false" onAction="#cambiarContrasenya" prefHeight="46.0" prefWidth="169.0" style="-fx-background-radius: 20; -fx-background-color: WHITE;" text="CAMBIAR CONTRASEÑA" textFill="#2d2d34" />
          </children>
       </AnchorPane>
    </children>

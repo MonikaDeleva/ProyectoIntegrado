@@ -21,6 +21,19 @@ import javafx.scene.layout.AnchorPane;
 
 /**
  * FXML Controller class
+ * <p>
+ * Esta clase nos muestra en una tabla los anuncios en los que estoy inscrito,
+ * dispone de un boton en el que podemos desasociarnos de el anuncio que
+ * tengamos seleccionado en la tabla.<p>
+ * <p>
+ * La tabla disponde de la siguiente información:</p>
+ * <ul>
+ * <li>Titulo del anuncio</li>
+ * <li>Descripción del anuncio</li>
+ * <li>Categoría del anuncio</li>
+ * <li>Ubicación del anuncio</li>
+ * <li>Tiempo estimado del anuncio en minutos</li>
+ * </ul>
  *
  * @author 1erDAM
  */
@@ -64,6 +77,16 @@ public class FXMLAnunciosInscritosController implements Initializable {
 
     }
 
+    /**
+     * <p>
+     * Este metodo es una acción de un boton en el que abandonaremos un anuncio
+     * en el que estamos inscritos con tan solo pulsar el anuncio en la tabla y
+     * luego el botón. Este llamará a la base de datos con un metodo sitiado en
+     * anuncioModel. Además cambiara el estado de ese anuncio de ocupado a
+     * Libre.</p>
+     *
+     * @param event
+     */
     @FXML
     private void abandonarAnuncio(ActionEvent event) {
 
